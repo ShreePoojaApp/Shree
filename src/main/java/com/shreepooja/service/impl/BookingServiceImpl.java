@@ -5,6 +5,7 @@ import com.shreepooja.entity.BookingDetails;
 import com.shreepooja.repository.BookingRepository;
 import com.shreepooja.service.BookingService;
 import lombok.extern.slf4j.Slf4j;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +22,7 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public void bookService(Booking booking) {
+        booking.setUser_id(new ObjectId(booking.getUserId()));
         bookingRepository.save(booking);
     }
 
@@ -36,7 +38,7 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public List<BookingDetails> getBookingAndUserDetails() {
-        return bookingRepository.getBookingAndUserDetails();
+        return bookingRepository.getBookingDetailsWithUsers();
     }
 
     @Override

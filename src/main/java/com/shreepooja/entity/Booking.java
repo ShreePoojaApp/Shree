@@ -3,6 +3,7 @@ package com.shreepooja.entity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -17,6 +18,7 @@ public class Booking implements Serializable {
     private String id;
     @NonNull
     private String userId;
+    private ObjectId user_id;
     @NonNull
     private String priestId;
     private String cateringId;

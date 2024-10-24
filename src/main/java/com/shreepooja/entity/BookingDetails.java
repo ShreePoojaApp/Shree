@@ -12,13 +12,10 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 public class BookingDetails implements Serializable {
-    private String id;
-    private String userId;
-    private String priestId;
-    private String cateringId;
-    private String worshipId;
     private String fromDateTime;
     private String toDateTime;
     private String user_Id;
-    private List<User> user;
+    private List<User> users;
+    private List<User> priests;
+    private List<Worship> worships;
 }
